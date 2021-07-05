@@ -1,0 +1,19 @@
+{% load static %}
+
+
+<section id="navbar">
+    <div class="container">
+        <nav id="main-nav">
+            <a href="{% url 'home' %}">
+            <img src="{% static 'img/logo.png' %}" alt="Logo" id="logo">
+            </a>
+            <ul>
+                <li><a href="{% url 'home' %}" class="current">Home</a></li>
+                <li><a href="{% url 'home' %}" class="current">About</a></li>
+                <li><a href="{% url 'home' %}" class="current">Books</a></li>
+                <li><a href="{% url 'home' %}" class="current">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</section>
+
