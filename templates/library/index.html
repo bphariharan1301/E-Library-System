@@ -8,9 +8,61 @@
 
 {% block content %}
     
-<h1>
-    Home Page
-</h1>
+<section id="home-a" class="text-center py-3">
+    <div class="container">
+        <h2 class="section-title">
+            Latest Books
+        </h2>
+        <div class="bottom-line"></div>
+        <div class="items">
+            <div class="item">
+                <div class="item-image">
+                    <img src="{% static 'img/item1.png' %}" alt="item-1">
+                </div>
+                <div class="item-text">
+                    <div class="item-text-wrap">
+                        <p class="item-text-category">
+                            Coding
+                        </p>
+                        <p class="item-text-title">
+                            Django
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="item-image">
+                    <img src="{% static 'img/item2.png' %}" alt="item-1">
+                </div>
+                <div class="item-text">
+                    <div class="item-text-wrap">
+                        <p class="item-text-category">
+                            Coding
+                        </p>
+                        <p class="item-text-title">
+                            Django
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="item-image">
+                    <img src="{% static 'img/item3.png' %}" alt="item-1">
+                </div>
+                <div class="item-text">
+                    <div class="item-text-wrap">
+                        <p class="item-text-category">
+                            Coding
+                        </p>
+                        <p class="item-text-title">
+                            Django
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 {% endblock %}
 

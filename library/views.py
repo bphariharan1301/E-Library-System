@@ -10,3 +10,11 @@ def home(request):
 def books(request):
     context = {}
     return render(request, 'library/books.html', context)
+
+def about(request):
+    context = {}
+    return render(request, 'library/about.html', context)
+
+def contact(request):
+    context = {}
+    return render(request, 'library/contact.html', context)

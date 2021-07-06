@@ -4,6 +4,7 @@
 }
 
 body {
+  font-family: "Dosis", sans-serif;
   line-height: 1.6;
   background: #fff;
 }
@@ -21,28 +22,81 @@ img {
   width: 100%;
 }
 
+/* Utilities */
+
+.section-title {
+  font-size: 2rem;
+  display: block;
+  /* padding: 1rem 0; */
+  text-align: center;
+  font-weight: 100;
+  text-transform: uppercase;
+}
+
+.bottom-line {
+  height: 4px;
+  width: 3rem;
+  background-color: #213970;
+  display: block;
+  margin: 0 auto 2rem auto;
+}
+
+.lead {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Padding */
+.py-1 {
+  padding: 1rem 0;
+}
+.py-2 {
+  padding: 2rem 0;
+}
+.py-3 {
+  padding: 3rem 0;
+}
+
+/* Margin */
+.mx-1 {
+  margin: 0 1rem;
+}
+.mx-2 {
+  margin: 0 2rem;
+}
+.mx-3 {
+  margin: 0 3rem;
+}
+
 #logo {
-  width: 70px;
-  height: 70px;
+  width: 60px;
+  height: 60px;
+  padding: 0 2rem;
 }
 
 .container {
-  padding: 0 1.5rem;
+  padding: 1rem 1.5rem;
   margin: auto;
   overflow: hidden;
+  justify-items: center;
 }
 
 #navbar {
-  /* display: flex; */
-  /* justify-content: space-between; */
   background: #333;
+  overflow: hidden;
 }
 
 #main-nav {
   display: flex;
   justify-content: space-between;
   padding-top: 1rem;
-  /* background: #333; */
+  padding-right: 1rem;
+  margin: 0 2rem;
+  height: 4rem;
 }
 
 #main-nav ul {
@@ -53,9 +107,44 @@ img {
 }
 #main-nav a {
   text-decoration: none;
-  color: #fff;
+  color: #f4f4f4;
   text-transform: uppercase;
   border-bottom: 3px transparent solid;
   padding-bottom: 0.5rem;
   transition: border-color 0.5s;
+}
+
+#main-nav a.current {
+  border-bottom: #ffe042 3px solid;
+}
+
+#main-nav a:hover {
+  border-bottom: #fff 4px solid;
+}
+
+/* Home */
+
+#home-a .items {
+  display: grid;
+  grid-gap: 0.5rem;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 0 1.5rem;
+}
+
+#home-a .container .item {
+  border: 2px grey solid;
+}
+
+#home-a .container .item-image img {
+  height: 100%;
+  width: 100%;
+}
+
+#home-a .items .item-text {
+  font-size: 1rem;
+}
+
+#home-a .items .item-text-wrap {
+  text-align: center;
+  font-size: 1.5rem;
 }

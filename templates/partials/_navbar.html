@@ -8,10 +8,34 @@
             <img src="{% static 'img/logo.png' %}" alt="Logo" id="logo">
             </a>
             <ul>
-                <li><a href="{% url 'home' %}" class="current">Home</a></li>
-                <li><a href="{% url 'home' %}" class="current">About</a></li>
-                <li><a href="{% url 'home' %}" class="current">Books</a></li>
-                <li><a href="{% url 'home' %}" class="current">Contact</a></li>
+                <li>
+                    {% if '/' == request.path %}   
+                    <a href="{% url 'about' %}" class="current">Home</a>
+                    {% else %}
+                        <a href="{% url 'home' %}">Home</a>
+                    {% endif %}
+                </li>    
+                <li>
+                    {% if 'about' in request.path %}
+                        <a href="{% url 'about' %}" class="current">About</a>
+                    {% else %}
+                        <a href="{% url 'about' %}">About</a>
+                    {% endif %}
+                </li>
+                <li>
+                    {% if 'books' in request.path %}
+                        <a href="{% url 'books' %}" class="current">Books</a>
+                    {% else %}
+                        <a href="{% url 'books' %}">Books</a>
+                    {% endif %}
+                </li>
+                <li>
+                    {% if 'contact' in request.path %}
+                        <a href="{% url 'contact' %}" class="current">Contact</a>
+                    {% else %}
+                        <a href="{% url 'contact' %}">Contact</a>
+                    {% endif %}
+                </li>
             </ul>
         </nav>
     </div>
