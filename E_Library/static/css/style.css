@@ -3,10 +3,22 @@
   padding: 0;
 }
 
+.element::-webkit-scrollbar {
+  width: 0 !important;
+}
+
+.element {
+  overflow: -moz-scrollbars-none;
+}
+
+.element {
+  -ms-overflow-style: none;
+}
+
 body {
   font-family: "Dosis", sans-serif;
   line-height: 1.6;
-  background: #fff;
+  background: #f4f4f4;
 }
 
 a {
@@ -120,15 +132,17 @@ img {
 
 #main-nav a:hover {
   border-bottom: #fff 4px solid;
+  /* overflow: hidden; */
 }
 
 /* Home */
 
 #home-a .items {
   display: grid;
-  grid-gap: 0.5rem;
+  grid-gap: 1rem;
   grid-template-columns: repeat(3, 1fr);
-  padding: 0 1.5rem;
+  padding: 0 2rem;
+  margin: 0 5em;
 }
 
 #home-a .container .item {

@@ -5,7 +5,7 @@ scss/
 package.json
 package-lock.json
 node_modules/
-
+grid_columns.html
 
 
 # Created by https://www.toptal.com/developers/gitignore/api/django

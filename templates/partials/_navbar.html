@@ -5,28 +5,28 @@
     <div class="container">
         <nav id="main-nav">
             <a href="{% url 'home' %}">
-            <img src="{% static 'img/logo.png' %}" alt="Logo" id="logo">
+                <img src="{% static 'img/logo.png' %}" alt="Logo" id="logo">
             </a>
             <ul>
                 <li>
                     {% if '/' == request.path %}   
-                    <a href="{% url 'about' %}" class="current">Home</a>
+                        <a href="{% url 'about' %}" class="current">Home</a>
                     {% else %}
                         <a href="{% url 'home' %}">Home</a>
                     {% endif %}
                 </li>    
                 <li>
+                    {% if 'books' in request.path %}
+                    <a href="{% url 'books' %}" class="current">Books</a>
+                    {% else %}
+                    <a href="{% url 'books' %}">Books</a>
+                    {% endif %}
+                </li>
+                <li>
                     {% if 'about' in request.path %}
                         <a href="{% url 'about' %}" class="current">About</a>
                     {% else %}
                         <a href="{% url 'about' %}">About</a>
-                    {% endif %}
-                </li>
-                <li>
-                    {% if 'books' in request.path %}
-                        <a href="{% url 'books' %}" class="current">Books</a>
-                    {% else %}
-                        <a href="{% url 'books' %}">Books</a>
                     {% endif %}
                 </li>
                 <li>

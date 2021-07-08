@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+
+{% load static %}
+
+{% block title %}
+    Books
+{% endblock %}
+
+{% block content %}
+
+<h1>
+    Available Books
+</h1>
+
+<ul>
+    {% for book in books %}
+        <li>
+            <p class="lead">
+                {{ book.name }}
+            </p> 
+            <p class="lead">
+                {{ book.category }}
+            </p>
+            <img src="{{ book.photo_main.url }}" id="logo" alt="item-1">
+        </li>
+    {% endfor %}
+</ul>
+
+
+{% endblock %}
