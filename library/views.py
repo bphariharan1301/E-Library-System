@@ -5,10 +5,10 @@ from django.shortcuts import render
 
 
 def home(request):
-    book = Book.objects.all()
+    books = Book.objects.all()
 
     context = {
-        'book': book,
+        'books': books,
     }
     return render(request, 'library/index.html', context)
 

@@ -9,23 +9,35 @@
 
 {% block content %}
 
-<h1>
-    Available Books
-</h1>
 
-<ul>
-    {% for book in books %}
-        <li>
-            <p class="lead">
-                {{ book.name }}
-            </p> 
-            <p class="lead">
-                {{ book.category }}
-            </p>
-            <img src="{{ book.photo_main.url }}" id="logo" alt="item-1">
-        </li>
-    {% endfor %}
-</ul>
+<section id="home-a" class="text-center py-3">
+    <div class="container">
+        <h2 class="section-title">
+            Latest Books
+        </h2>
+        <div class="bottom-line"></div>
+        <div class="items">
+            {% for book in books %}
+                <div class="item">
+                    <div class="item-image">
+                        <img src="{{ book.photo_main.url }}" alt="item-1">
+                    </div>
+                    <div class="item-text">
+                        <div class="item-text-wrap">
+                            <p class="item-text-category">
+                                {{ book.category }}
+                            </p>
+                            <p class="item-text-title">
+                                {{ book.name }}
+                            </p>
+                        </div>
+                        <a href="{% url 'book' book.id %}" class="btn btn-dark detail-btn" >Details</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
 
 
 {% endblock %}

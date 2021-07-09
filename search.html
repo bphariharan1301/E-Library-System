@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>Search</title>
+</head>
+<body>
+    <section id="home-b" class="text-center py-3">
+        <div class="container book-search">
+            <div class="search-content">
+                <h2 class="section-title">Search Book</h2>
+                <div class="bottom-search-line"></div>
+                <form action="{% url 'contact' %}" method="POST" >
+                    {% csrf_token %}
+                    <div class="text-fields">
+                    <input
+                        type="text"
+                        class="text-input name-input"
+                        placeholder="Name"
+                        name="name"
+                    />
+                    <input
+                        type="text"
+                        class="text-input subject-input"
+                        placeholder="Subject"
+                        name="subject"
+                    />
+                    <input
+                        type="email"
+                        class="text-input email-input"
+                        placeholder="Email Address"
+                        name="email"
+                    />
+                    <input
+                        type="text"
+                        class="text-input phone-input"
+                        placeholder="Phone Number"
+                        name="phone_number"
+                    />
+                    <textarea
+                        class="text-input message-input"
+                        placeholder="Enter Message"
+                        name="message"
+                    ></textarea>  
+    
+                    </div>
+                    <button type="submit" class="btn btn-dark search-button">Submit</button>
+                </form>
+            </div>
+        </div>
+      </section>
+</body>
+</html>
