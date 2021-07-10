@@ -14,23 +14,31 @@
         <div class="search-content"  id="bg-search">
             <h2 class="section-title">Search Book</h2>
             <div class="bottom-search-line"></div>
-            <form action="#" method="POST" >
+            <form action="{% url 'search' %}" method="POST" >
                 {% csrf_token %}
                 <div class="text-fields">
                 <input
                     type="text"
                     class="text-input name-input"
                     placeholder="Name"
-                    name="name"
+                    name="name" 
                 />
+                <br>
                 <input
                     type="text"
                     class="text-input subject-input"
-                    placeholder="Subject"
-                    name="category"
+                    placeholder="Author"
+                    name="author"
                 />
+                <br>
+                <select name="price" class="text-input category-input">
+                    <option selected="true" disabled="disabled">Category (All)</option>
+                    {% for category in categories %}
+                        <option value="{{ category.name }}" selected>{{ category.name }}</option>
+                    {% endfor %}
+                  </select>
 
-                </div>
+                </div> 
                 <button type="submit" class="btn btn-light search-button">Submit</button>
             </form>
         </div>
@@ -44,24 +52,30 @@
         </h2>
         <div class="bottom-line"></div>
         <div class="items">
-            {% for book in books %}
-                <div class="item">
-                    <div class="item-image">
-                        <img src="{{ book.photo_main.url }}" alt="item-1">
-                    </div>
-                    <div class="item-text">
-                        <div class="item-text-wrap">
-                            <p class="item-text-category">
-                                {{ book.category }}
-                            </p>
-                            <p class="item-text-title">
-                                {{ book.name }}
-                            </p>
+            {% if books %}
+                {% for book in books %}
+                    <div class="item">
+                        <div class="item-image">
+                            <img src="{{ book.photo_main.url }}" alt="item-1">
                         </div>
-                        <a href="{% url 'book' book.id %}" class="btn btn-dark detail-btn" >Details</a>
+                        <div class="item-text">
+                            <div class="item-text-wrap">
+                                <p class="item-text-category">
+                                    {{ book.category }}
+                                </p>
+                                <p class="item-text-title">
+                                    {{ book.name }}
+                                </p>
+                            </div>
+                            <a href="{% url 'book' book.id %}" class="btn btn-dark detail-btn" >Details</a>
+                        </div>
                     </div>
-                </div>
-            {% endfor %}
+                {% endfor %}
+            {% else %}
+                <p class="lead">
+                    No Books Available
+                </p>
+            {% endif %}
         </div>
     </div>
 </section>
