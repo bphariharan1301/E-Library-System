@@ -1,12 +1,7 @@
 
 # Manually added Credentials hidden
 .vscode/
-scss/
-package.json
-package-lock.json
-node_modules/
-grid_columns.html
-documents
+documents/
 
 # Created by https://www.toptal.com/developers/gitignore/api/django
 # Edit at https://www.toptal.com/developers/gitignore?templates=django
