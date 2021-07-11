@@ -1,14 +1,35 @@
 {% extends 'base.html' %}
 
+{% block title %}
+    {{ book.name }}
+{% endblock %}
+
 {% block content %}
 
-<h1 class="section-title">
-    {{ book.name }}
-</h1>
+    <section id="book-a" class="text-center py-2">
+        <div class="container">
+            <h2 class="section-title">
+                {{ book.name }}
+            </h2>
+            <div class="bottom-line"></div>
+            <div class="book-details">
+                <img src="{{ book.photo_main.url }}" alt="Book Image" class="book-image">
+                <div class="book-detail-wrapper">
+                    <h2 class="book-category">
+                        Category: {{ book.category }}
+                    </h2>
+                    <p class="book-description">
+                        {{ book.description }}
+                    </p>
 
-<p class="lead">
-    {{ book.category }}
-</p>
+                </div>
+                
+            </div>
+            <a href="{{ book.download_book.url }}" class="btn btn-dark download-btn" target="__blank" >
+                Download e-book
+            </a>
+        </div>
+    </section>
 
 {% endblock %}
 

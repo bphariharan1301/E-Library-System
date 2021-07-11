@@ -14,7 +14,7 @@
         <div class="search-content"  id="bg-search">
             <h2 class="section-title">Search Book</h2>
             <div class="bottom-search-line"></div>
-            <form action="{% url 'search' %}" method="POST" >
+            <form action="{% url 'search' %}">
                 {% csrf_token %}
                 <div class="text-fields">
                 <input
@@ -31,10 +31,10 @@
                     name="author"
                 />
                 <br>
-                <select name="price" class="text-input category-input">
+                <select name="category" class="text-input category-input">
                     <option selected="true" disabled="disabled">Category (All)</option>
                     {% for category in categories %}
-                        <option value="{{ category.name }}" selected>{{ category.name }}</option>
+                        <option value="{{ category.name }}">{{ category.name }}</option>
                     {% endfor %}
                   </select>
 
