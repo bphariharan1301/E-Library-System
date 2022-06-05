@@ -12,6 +12,7 @@ class Book(models.Model):
     category = models.CharField(max_length=10, default='Coding')
     photo_main = models.ImageField(
         null=True, blank=True, upload_to='images/profile/')
+    # photo_main
     description = models.TextField()
     book_date = models.DateField(blank=True, default=date.today)
     download_book = models.FileField(upload_to='documents/%Y/%m/%d')

@@ -7,8 +7,8 @@
     <section id="search-form" class="text-center py-3">
         <div class="container">
             <div class="search-content"  id="bg-search">
-                <h2 class="section-title search-title">Search Book</h2>
-                <div class="bottom-search-line"></div>
+                <!-- <h2 class="section-title search-title">Search Book</h2>
+                <div class="bottom-search-line"></div> -->
                 <form action="{% url 'search' %}">
                     {% csrf_token %}
                     <div class="text-fields">
@@ -18,14 +18,12 @@
                         placeholder="Name"
                         name="name"
                     />
-                    <br>
                     <input
                         type="text"
                         class="text-input subject-input"
                         placeholder="Author"
                         name="author"
                     />
-                    <br>
                     <select name="category" class="text-input category-input">
                         <option selected="true" disabled="disabled">Category (All)</option>
                         {% for cat in cats %}
